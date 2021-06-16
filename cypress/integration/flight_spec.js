@@ -85,8 +85,15 @@ describe('Book Flight From Paris to London', () => {
     cy.url().should('include', '/confirmation')
     cy.contains('Thank you for your purchase today!')
 
-    const date = new Date()
-    const formattedDate = moment(date).format('ddd, DD MMM YYYY')
-    cy.get('table').contains('td', 'Date').next().contains(formattedDate)
+    cy.get('table')
+      .contains('td', 'Date')
+      .next()
+      .should(($td) => {
+        expect($td.get(0).innerText).to.satisfy(
+          function(dateString) {
+            const orderDate = moment(dateString);
+            return orderDate.isSame(new Date(), 'd')
+          })
+      })
   })
 })
