@@ -14,8 +14,12 @@ describe('Book Flight From Paris to London', () => {
     cy.visit('http://blazedemo.com/')
 
     // Front page
+    cy.get('select[name="fromPort"]')
+      .select('Paris')
+      .invoke('val')
+      .should('eq', 'Paris')
     cy.get('select[name="toPort"]')
-      .select("London")
+      .select('London')
       .invoke('val')
       .should('eq', 'London')
 
