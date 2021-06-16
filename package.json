@@ -1,0 +1,20 @@
+{
+  "name": "book_flight",
+  "description": "Cypress playground",
+  "version": "1.0.0",
+  "homepage": "https://github.com/vpavlushkov/BookFlight#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vpavlushkov/BookFlight.git"
+  },
+  "author": {
+    "name": "Victor Pavlushkov",
+    "email": "vpavlushkov@gmail.com"
+  },
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "cypress": "^7.5.0",
+    "moment": "^2.29.1"
+  }
+}
