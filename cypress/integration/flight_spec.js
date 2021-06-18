@@ -93,7 +93,7 @@ describe('Book Flight From Paris to London', () => {
           function(dateString) {
             const orderDate = moment(dateString);
             const now = new Date();
-            return orderDate.isSame(now.add(1, 'days'), 'd')
+            return orderDate.isSame(moment(now).add(1, 'days'), 'd')
           })
       })
   })
