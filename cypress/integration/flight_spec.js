@@ -92,7 +92,8 @@ describe('Book Flight From Paris to London', () => {
         expect($td.get(0).innerText).to.satisfy(
           function(dateString) {
             const orderDate = moment(dateString);
-            return orderDate.isSame(new Date(), 'd')
+            const now = new Date();
+            return orderDate.isSame(now.add(1, 'days'), 'd')
           })
       })
   })
